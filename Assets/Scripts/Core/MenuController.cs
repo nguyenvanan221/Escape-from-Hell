@@ -14,8 +14,6 @@ public class MenuController : MonoBehaviour
     {
         Application.Quit();
 
-#if UNITY_EDITOR
-        UnityEditor.EditorApplication.isPlaying = false;
-#endif
+
     }
 }

@@ -26,8 +26,8 @@ public class UIManager : MonoBehaviour
     [SerializeField] private GameObject pauseGameScreen;
     [HideInInspector] public bool isPause;
     [SerializeField] private Image image;
-    private Sprite pauseSprite;
-    private Sprite playSprite;
+    [SerializeField] private Sprite pauseSprite;
+    [SerializeField] private Sprite playSprite;
 
     PlayerControls controls;
 
@@ -58,8 +58,6 @@ public class UIManager : MonoBehaviour
             else PauseGame(true);
         };
 
-        pauseSprite = AssetDatabase.LoadAssetAtPath<Sprite>("Assets/Sprites/pause.png");
-        playSprite = AssetDatabase.LoadAssetAtPath<Sprite>("Assets/Sprites/play.png");
         image.sprite = playSprite;
     }
 
@@ -101,9 +99,9 @@ public class UIManager : MonoBehaviour
     {
         Application.Quit();
 
-#if UNITY_EDITOR
-        UnityEditor.EditorApplication.isPlaying = false;
-#endif
+//#if UNITY_EDITOR
+//        UnityEditor.EditorApplication.isPlaying = false;
+//#endif
     }
     #endregion
 
