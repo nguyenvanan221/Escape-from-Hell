@@ -12,7 +12,7 @@ public class EnemyBullet : Bullet
         {
             collision.GetComponent<Player>().TakeDamage();
 
-            SoundManager.instance.PlaySound(explosionAudio);
+            SoundManager.Instance.PlaySound(explosionAudio);
             animator.SetTrigger("explode");
 
         }

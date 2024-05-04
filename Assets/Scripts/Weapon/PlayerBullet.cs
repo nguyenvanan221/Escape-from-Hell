@@ -5,12 +5,6 @@ using UnityEngine;
 
 public class PlayerBullet : Bullet
 {
-    
-    //void Awake()
-    //{
-    //    animator = GetComponent<Animator>();
-
-    //}
     private void OnTriggerEnter2D(Collider2D collision)
     {
         hit = true;
@@ -18,7 +12,7 @@ public class PlayerBullet : Bullet
         {
             collision.GetComponent<Enemy>().TakeDamage();
 
-            SoundManager.instance.PlaySound(explosionAudio);
+            SoundManager.Instance.PlaySound(explosionAudio);
             animator.SetTrigger("explode");
 
         }

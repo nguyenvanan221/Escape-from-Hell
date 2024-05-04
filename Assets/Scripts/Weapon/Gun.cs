@@ -60,7 +60,7 @@ public class Gun : MonoBehaviour
     {
         GameObject bulletObj = Instantiate(bullet, shootingPoint.position, Quaternion.identity);
         bulletObj.GetComponent<Bullet>().SetDirection(Mathf.Sign(transform.localScale.x));
-        SoundManager.instance.PlaySound(shootSound);
+        SoundManager.Instance.PlaySound(shootSound);
 
         NumBullet--;
         attackIntervalCountdown = attackInterval;

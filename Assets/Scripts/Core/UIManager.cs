@@ -6,10 +6,8 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class UIManager : MonoBehaviour
+public class UIManager : Singleton<UIManager>
 {
-    public static UIManager Instance { get; private set; }
-
     // energy value
     float EnergyValue;
     readonly float energyTotal = 7;
@@ -37,15 +35,6 @@ public class UIManager : MonoBehaviour
         pauseGameScreen.SetActive(false);
         EnergyValue = 0;
 
-        if (Instance != null && Instance != this)
-        {
-            Destroy(gameObject);
-        }
-        else
-        {
-            Instance = this;
-            //DontDestroyOnLoad(gameObject);
-        }
 
         controls = new();
         controls.Enable();
@@ -78,7 +67,7 @@ public class UIManager : MonoBehaviour
     public void GameOver()
     {
         gameOverScreen.SetActive(true);
-        SoundManager.instance.PlaySound(gameOverSound);
+        SoundManager.Instance.PlaySound(gameOverSound);
         Time.timeScale = 0f;
     }
 

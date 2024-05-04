@@ -12,7 +12,7 @@ public class EnergyCollectible : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             UIManager.Instance.AddEnergy(1);
-            SoundManager.instance.PlaySound(pickUpEnergyaudio);
+            SoundManager.Instance.PlaySound(pickUpEnergyaudio);
             gameObject.SetActive(false);
         }
     }

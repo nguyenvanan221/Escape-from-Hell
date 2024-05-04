@@ -12,7 +12,7 @@ public class GunCollectible : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             collision.GetComponent<Gun>().AddBullet(bulletValue);
-            SoundManager.instance.PlaySound(pickUpGunAudio);
+            SoundManager.Instance.PlaySound(pickUpGunAudio);
             gameObject.SetActive(false);
         }
     }

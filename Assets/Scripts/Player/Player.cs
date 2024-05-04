@@ -20,7 +20,7 @@ public class Player : MonoBehaviour
     {
         hitpoints.value--;
         animator.SetTrigger("isHurt");
-        SoundManager.instance.PlaySound(sound);
+        SoundManager.Instance.PlaySound(sound);
     }
 
     public void Respawn()
